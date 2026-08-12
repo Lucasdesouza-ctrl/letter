@@ -1,0 +1,151 @@
+.home {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  background-image: url('/home.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* Camada escura */
+
+.home::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(8, 11, 26, 0.60);
+
+  z-index: 1;
+}
+
+/* Estrelas */
+
+.stars {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.stars::before,
+.stars::after {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background-repeat: no-repeat;
+}
+
+.stars::before {
+  background-image:
+    radial-gradient(circle at 8% 12%, white 1px, transparent 2px),
+    radial-gradient(circle at 22% 35%, white 2px, transparent 3px),
+    radial-gradient(circle at 38% 18%, white 1px, transparent 2px),
+    radial-gradient(circle at 52% 42%, white 1px, transparent 2px),
+    radial-gradient(circle at 67% 15%, white 2px, transparent 3px),
+    radial-gradient(circle at 81% 30%, white 1px, transparent 2px),
+    radial-gradient(circle at 93% 10%, white 1px, transparent 2px),
+    radial-gradient(circle at 15% 68%, white 1px, transparent 2px),
+    radial-gradient(circle at 31% 82%, white 2px, transparent 3px),
+    radial-gradient(circle at 48% 70%, white 1px, transparent 2px),
+    radial-gradient(circle at 63% 88%, white 1px, transparent 2px),
+    radial-gradient(circle at 78% 65%, white 2px, transparent 3px),
+    radial-gradient(circle at 91% 82%, white 1px, transparent 2px);
+
+  animation: starsGlow 4s ease-in-out infinite alternate;
+}
+
+.stars::after {
+  background-image:
+    radial-gradient(circle at 5% 48%, rgba(175, 203, 255, 0.9) 1px, transparent 2px),
+    radial-gradient(circle at 18% 90%, rgba(175, 203, 255, 0.8) 1px, transparent 2px),
+    radial-gradient(circle at 45% 55%, rgba(255, 255, 255, 0.7) 1px, transparent 2px),
+    radial-gradient(circle at 58% 8%, rgba(175, 203, 255, 0.8) 1px, transparent 2px),
+    radial-gradient(circle at 73% 48%, rgba(255, 255, 255, 0.8) 1px, transparent 2px),
+    radial-gradient(circle at 87% 58%, rgba(175, 203, 255, 0.9) 2px, transparent 3px),
+    radial-gradient(circle at 97% 93%, rgba(255, 255, 255, 0.7) 1px, transparent 2px);
+
+  animation: starsGlow 6s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes starsGlow {
+  from {
+    opacity: 0.35;
+  }
+
+  to {
+    opacity: 0.9;
+  }
+}
+
+/* Conteúdo */
+
+.content {
+  width: 100%;
+  max-width: 500px;
+
+  position: relative;
+
+  z-index: 3;
+
+  color: var(--text);
+}
+
+/* Coração */
+
+.heart {
+  font-size: 60px;
+
+  margin-bottom: 20px;
+
+  animation: heartbeat 1.8s ease-in-out infinite;
+}
+
+/* Título */
+
+h1 {
+  font-size: 36px;
+
+  margin: 0 0 25px;
+}
+
+/* Texto */
+
+p {
+  font-size: 18px;
+
+  line-height: 1.6;
+
+  margin-bottom: 20px;
+}
+
+/* Estrelas piscando */
+
+@keyframes twinkle {
+
+  from {
+    opacity: 0.3;
+  }
+
+  to {
+    opacity: 0.8;
+  }
+
+}
